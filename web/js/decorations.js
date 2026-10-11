@@ -1,22 +1,75 @@
 // Original vector accents. Kept separate from all uploaded logos and images.
-const icon=(body)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">${body}</svg>`;
-const SEASONAL_ART={
-ghost:icon('<path d="M13 52V28a19 19 0 0 1 38 0v24l-9-5-10 7-10-7z" fill="#f5f8ff" stroke="#bdcbe4" stroke-width="2"/><ellipse cx="25" cy="28" rx="3" ry="5" fill="#18243b"/><ellipse cx="39" cy="28" rx="3" ry="5" fill="#18243b"/><ellipse cx="32" cy="40" rx="4" ry="5" fill="#18243b"/>'),
-pumpkin:icon('<path d="M31 19q-5-12 5-15l3 4q-7 2-4 11" fill="#639a40"/><ellipse cx="32" cy="37" rx="27" ry="22" fill="#f18d22" stroke="#a64b14" stroke-width="2"/><ellipse cx="32" cy="37" rx="14" ry="22" fill="#ffad39" stroke="#d56a19" stroke-width="2"/><path d="m16 30 10 2-7 6zm32 0-10 2 7 6zM19 45l7 3 6-5 6 5 7-3-5 9H24z" fill="#4d261a"/>'),
-tree:icon('<path d="M28 48h8v12h-8z" fill="#a66e3f"/><path d="M32 6 15 29h9L8 49h48L40 29h9z" fill="#34865c" stroke="#a3d4a6" stroke-width="2"/><path d="m32 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="#f2d075"/><path d="M21 31q11 8 22 5M16 42q15 9 32 2" stroke="#f2d075" stroke-width="2" fill="none"/><circle cx="26" cy="28" r="3" fill="#eb6260"/><circle cx="37" cy="40" r="3" fill="#eb6260"/>'),
-hat:icon('<path d="M10 46Q19 11 45 10q10 3 10 19l-9 2q-2-12-9-5L30 46z" fill="#d8404d" stroke="#ff9c9e" stroke-width="2"/><rect x="7" y="43" width="37" height="12" rx="6" fill="#fff7ed"/><circle cx="52" cy="32" r="8" fill="#fff7ed"/>'),
-bunny:icon('<ellipse cx="23" cy="18" rx="7" ry="17" fill="#fff5f1" stroke="#d4b4d8" stroke-width="2"/><ellipse cx="41" cy="18" rx="7" ry="17" fill="#fff5f1" stroke="#d4b4d8" stroke-width="2"/><ellipse cx="23" cy="17" rx="3" ry="11" fill="#efb4c9"/><ellipse cx="41" cy="17" rx="3" ry="11" fill="#efb4c9"/><ellipse cx="32" cy="43" rx="22" ry="18" fill="#fff5f1" stroke="#d4b4d8" stroke-width="2"/><circle cx="24" cy="40" r="2.5" fill="#554165"/><circle cx="40" cy="40" r="2.5" fill="#554165"/><path d="m28 47 4 4 4-4z" fill="#e6a5bf"/><path d="M32 51q-4 7-8 2m8-2q4 7 8 2" fill="none" stroke="#9f739a" stroke-width="2"/>'),
-egg:icon('<path d="M32 5C14 5 5 49 16 58q16 9 32 0C59 49 50 5 32 5z" fill="#cbb9ef" stroke="#eee5ff" stroke-width="2"/><path d="m13 28 9 5 10-5 10 5 9-5M10 46l11-5 11 5 11-5 11 5" fill="none" stroke="#a5e2d5" stroke-width="5"/><circle cx="24" cy="52" r="3" fill="#ffe5a9"/><circle cx="40" cy="52" r="3" fill="#ffe5a9"/>'),
-leaf:icon('<path d="m31 59 2-18" stroke="#d5aa6f" stroke-width="3"/><path d="m33 45-16 5 2-13L7 30l13-4-3-14 13 6 5-14 7 17 12-6-4 14 10 5-13 9-3 9z" fill="#d98939" stroke="#ffd08a" stroke-width="2"/><path d="m32 43 4-29m-3 19-11-8m11 13 13-6" stroke="#ae5830" fill="none" stroke-width="2"/>'),
-turkey:icon('<ellipse cx="15" cy="29" rx="9" ry="18" transform="rotate(-35 15 29)" fill="#d78b42"/><ellipse cx="49" cy="29" rx="9" ry="18" transform="rotate(35 49 29)" fill="#d78b42"/><ellipse cx="25" cy="23" rx="8" ry="20" fill="#c66037"/><ellipse cx="39" cy="23" rx="8" ry="20" fill="#c66037"/><ellipse cx="32" cy="42" rx="17" ry="16" fill="#865038" stroke="#e8b477" stroke-width="2"/><path d="m25 55-4 7m18-7 4 7" stroke="#e8b477" stroke-width="3"/><circle cx="32" cy="25" r="10" fill="#ad7650"/><circle cx="28" cy="23" r="2" fill="#1d2535"/><circle cx="36" cy="23" r="2" fill="#1d2535"/><path d="m29 29 3 5 3-5z" fill="#f9be52"/><ellipse cx="37" cy="34" rx="3" ry="6" fill="#df5755"/>'),
-firework:icon('<g fill="none" stroke="#f5d27b" stroke-width="3" stroke-linecap="round"><path d="M32 4v13m0 30v13M4 32h13m30 0h13M12 12l10 10m20 20 10 10M12 52l10-10m20-20 10-10"/><path d="m25 8 3 10m15-8-6 10m19 23-10-6m-3 19-6-10m-19 9 7-10m-15-2 10-6m-10-19 10 7" stroke="#f0aaf5" stroke-width="2"/></g><circle cx="32" cy="32" r="4" fill="#fff5cf"/>'),
-flag:icon('<path d="M11 59V7" stroke="#cad8ed" stroke-width="4"/><path d="M13 8h44v30H13z" fill="#fff"/><path d="M13 8h44v5H13zm0 10h44v5H13zm0 10h44v5H13z" fill="#d75463"/><path d="M13 8h21v18H13z" fill="#274c94"/><g fill="#fff"><circle cx="19" cy="14" r="1.5"/><circle cx="27" cy="14" r="1.5"/><circle cx="19" cy="21" r="1.5"/><circle cx="27" cy="21" r="1.5"/></g>'),
-gold:icon('<path d="m16 10 32 0 12 18-28 32L4 28z" fill="#e8bf61" stroke="#fff1b6" stroke-width="2"/><path d="m16 10 7 18 9-18 9 18 7-18M4 28h56M23 28l9 32 9-32" stroke="#fff1b6" stroke-width="2" fill="none"/>'),
-sapphire:icon('<path d="m16 10 32 0 12 18-28 32L4 28z" fill="#236bd1" stroke="#a6e3ff" stroke-width="2"/><path d="m16 10 7 18 9-18 9 18 7-18M4 28h56M23 28l9 32 9-32" stroke="#a6e3ff" stroke-width="2" fill="none"/>')
+const icon = (body) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">${body}</svg>`;
+const SEASONAL_ART = {
+  ghost: icon(
+    '<path d="M13 52V28a19 19 0 0 1 38 0v24l-9-5-10 7-10-7z" fill="#f5f8ff" stroke="#bdcbe4" stroke-width="2"/><ellipse cx="25" cy="28" rx="3" ry="5" fill="#18243b"/><ellipse cx="39" cy="28" rx="3" ry="5" fill="#18243b"/><ellipse cx="32" cy="40" rx="4" ry="5" fill="#18243b"/>',
+  ),
+  pumpkin: icon(
+    '<path d="M31 19q-5-12 5-15l3 4q-7 2-4 11" fill="#639a40"/><ellipse cx="32" cy="37" rx="27" ry="22" fill="#f18d22" stroke="#a64b14" stroke-width="2"/><ellipse cx="32" cy="37" rx="14" ry="22" fill="#ffad39" stroke="#d56a19" stroke-width="2"/><path d="m16 30 10 2-7 6zm32 0-10 2 7 6zM19 45l7 3 6-5 6 5 7-3-5 9H24z" fill="#4d261a"/>',
+  ),
+  tree: icon(
+    '<path d="M28 48h8v12h-8z" fill="#a66e3f"/><path d="M32 6 15 29h9L8 49h48L40 29h9z" fill="#34865c" stroke="#a3d4a6" stroke-width="2"/><path d="m32 2 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="#f2d075"/><path d="M21 31q11 8 22 5M16 42q15 9 32 2" stroke="#f2d075" stroke-width="2" fill="none"/><circle cx="26" cy="28" r="3" fill="#eb6260"/><circle cx="37" cy="40" r="3" fill="#eb6260"/>',
+  ),
+  hat: icon(
+    '<path d="M10 46Q19 11 45 10q10 3 10 19l-9 2q-2-12-9-5L30 46z" fill="#d8404d" stroke="#ff9c9e" stroke-width="2"/><rect x="7" y="43" width="37" height="12" rx="6" fill="#fff7ed"/><circle cx="52" cy="32" r="8" fill="#fff7ed"/>',
+  ),
+  bunny: icon(
+    '<ellipse cx="23" cy="18" rx="7" ry="17" fill="#fff5f1" stroke="#d4b4d8" stroke-width="2"/><ellipse cx="41" cy="18" rx="7" ry="17" fill="#fff5f1" stroke="#d4b4d8" stroke-width="2"/><ellipse cx="23" cy="17" rx="3" ry="11" fill="#efb4c9"/><ellipse cx="41" cy="17" rx="3" ry="11" fill="#efb4c9"/><ellipse cx="32" cy="43" rx="22" ry="18" fill="#fff5f1" stroke="#d4b4d8" stroke-width="2"/><circle cx="24" cy="40" r="2.5" fill="#554165"/><circle cx="40" cy="40" r="2.5" fill="#554165"/><path d="m28 47 4 4 4-4z" fill="#e6a5bf"/><path d="M32 51q-4 7-8 2m8-2q4 7 8 2" fill="none" stroke="#9f739a" stroke-width="2"/>',
+  ),
+  egg: icon(
+    '<path d="M32 5C14 5 5 49 16 58q16 9 32 0C59 49 50 5 32 5z" fill="#cbb9ef" stroke="#eee5ff" stroke-width="2"/><path d="m13 28 9 5 10-5 10 5 9-5M10 46l11-5 11 5 11-5 11 5" fill="none" stroke="#a5e2d5" stroke-width="5"/><circle cx="24" cy="52" r="3" fill="#ffe5a9"/><circle cx="40" cy="52" r="3" fill="#ffe5a9"/>',
+  ),
+  leaf: icon(
+    '<path d="m31 59 2-18" stroke="#d5aa6f" stroke-width="3"/><path d="m33 45-16 5 2-13L7 30l13-4-3-14 13 6 5-14 7 17 12-6-4 14 10 5-13 9-3 9z" fill="#d98939" stroke="#ffd08a" stroke-width="2"/><path d="m32 43 4-29m-3 19-11-8m11 13 13-6" stroke="#ae5830" fill="none" stroke-width="2"/>',
+  ),
+  turkey: icon(
+    '<ellipse cx="15" cy="29" rx="9" ry="18" transform="rotate(-35 15 29)" fill="#d78b42"/><ellipse cx="49" cy="29" rx="9" ry="18" transform="rotate(35 49 29)" fill="#d78b42"/><ellipse cx="25" cy="23" rx="8" ry="20" fill="#c66037"/><ellipse cx="39" cy="23" rx="8" ry="20" fill="#c66037"/><ellipse cx="32" cy="42" rx="17" ry="16" fill="#865038" stroke="#e8b477" stroke-width="2"/><path d="m25 55-4 7m18-7 4 7" stroke="#e8b477" stroke-width="3"/><circle cx="32" cy="25" r="10" fill="#ad7650"/><circle cx="28" cy="23" r="2" fill="#1d2535"/><circle cx="36" cy="23" r="2" fill="#1d2535"/><path d="m29 29 3 5 3-5z" fill="#f9be52"/><ellipse cx="37" cy="34" rx="3" ry="6" fill="#df5755"/>',
+  ),
+  firework: icon(
+    '<g fill="none" stroke="#f5d27b" stroke-width="3" stroke-linecap="round"><path d="M32 4v13m0 30v13M4 32h13m30 0h13M12 12l10 10m20 20 10 10M12 52l10-10m20-20 10-10"/><path d="m25 8 3 10m15-8-6 10m19 23-10-6m-3 19-6-10m-19 9 7-10m-15-2 10-6m-10-19 10 7" stroke="#f0aaf5" stroke-width="2"/></g><circle cx="32" cy="32" r="4" fill="#fff5cf"/>',
+  ),
+  flag: icon(
+    '<path d="M11 59V7" stroke="#cad8ed" stroke-width="4"/><path d="M13 8h44v30H13z" fill="#fff"/><path d="M13 8h44v5H13zm0 10h44v5H13zm0 10h44v5H13z" fill="#d75463"/><path d="M13 8h21v18H13z" fill="#274c94"/><g fill="#fff"><circle cx="19" cy="14" r="1.5"/><circle cx="27" cy="14" r="1.5"/><circle cx="19" cy="21" r="1.5"/><circle cx="27" cy="21" r="1.5"/></g>',
+  ),
+  gold: icon(
+    '<path d="m16 10 32 0 12 18-28 32L4 28z" fill="#e8bf61" stroke="#fff1b6" stroke-width="2"/><path d="m16 10 7 18 9-18 9 18 7-18M4 28h56M23 28l9 32 9-32" stroke="#fff1b6" stroke-width="2" fill="none"/>',
+  ),
+  sapphire: icon(
+    '<path d="m16 10 32 0 12 18-28 32L4 28z" fill="#236bd1" stroke="#a6e3ff" stroke-width="2"/><path d="m16 10 7 18 9-18 9 18 7-18M4 28h56M23 28l9 32 9-32" stroke="#a6e3ff" stroke-width="2" fill="none"/>',
+  ),
 };
-SEASONAL_ART.snowman=icon('<circle cx="32" cy="46" r="17" fill="#f1f7ff" stroke="#a9c6df" stroke-width="2"/><circle cx="32" cy="23" r="12" fill="#f1f7ff" stroke="#a9c6df" stroke-width="2"/><path d="M19 16h26M24 15V3h16v12" fill="#14243b" stroke="#14243b" stroke-width="4"/><path d="M22 33h22v7H22zM38 36h7v14h-7z" fill="#cb3a4b"/><circle cx="28" cy="22" r="2"/><circle cx="37" cy="22" r="2"/><path d="m31 25 11 3-11 3" fill="#f28b26"/><circle cx="32" cy="45" r="2"/><circle cx="32" cy="53" r="2"/>');
-SEASONAL_ART.planet=icon('<circle cx="32" cy="32" r="20" fill="#8060cb" stroke="#c7b1ff" stroke-width="2"/><ellipse cx="32" cy="33" rx="30" ry="9" transform="rotate(-18 32 33)" fill="none" stroke="#70e0ee" stroke-width="3"/>');
-SEASONAL_ART.star=icon('<path d="m32 3 7 21 22 8-22 8-7 21-7-21-22-8 22-8z" fill="#c6eeff" stroke="#9575ee" stroke-width="2"/>');
-const THEME_ACCENTS={classic:[],halloween:['ghost','pumpkin'],thanksgiving:['turkey','leaf'],christmas:['tree','hat'],newyear:['firework','firework'],easter:['bunny','egg'],july:['flag','firework'],gold:['gold','gold'],sapphire:['sapphire','sapphire'],cosmic:['star','planet']};
-let accentTheme='';
-function renderThemeAccents(theme){if(theme===accentTheme)return;accentTheme=theme;const layer=document.getElementById('themeAccents');if(!layer)return;layer.innerHTML=(THEME_ACCENTS[theme]||[]).map((name,i)=>`<span class="theme-accent accent-${i}">${SEASONAL_ART[name]}</span>`).join('');}
+SEASONAL_ART.snowman = icon(
+  '<circle cx="32" cy="46" r="17" fill="#f1f7ff" stroke="#a9c6df" stroke-width="2"/><circle cx="32" cy="23" r="12" fill="#f1f7ff" stroke="#a9c6df" stroke-width="2"/><path d="M19 16h26M24 15V3h16v12" fill="#14243b" stroke="#14243b" stroke-width="4"/><path d="M22 33h22v7H22zM38 36h7v14h-7z" fill="#cb3a4b"/><circle cx="28" cy="22" r="2"/><circle cx="37" cy="22" r="2"/><path d="m31 25 11 3-11 3" fill="#f28b26"/><circle cx="32" cy="45" r="2"/><circle cx="32" cy="53" r="2"/>',
+);
+SEASONAL_ART.planet = icon(
+  '<circle cx="32" cy="32" r="20" fill="#8060cb" stroke="#c7b1ff" stroke-width="2"/><ellipse cx="32" cy="33" rx="30" ry="9" transform="rotate(-18 32 33)" fill="none" stroke="#70e0ee" stroke-width="3"/>',
+);
+SEASONAL_ART.star = icon(
+  '<path d="m32 3 7 21 22 8-22 8-7 21-7-21-22-8 22-8z" fill="#c6eeff" stroke="#9575ee" stroke-width="2"/>',
+);
+const THEME_ACCENTS = {
+  classic: [],
+  halloween: ["ghost", "pumpkin"],
+  thanksgiving: ["turkey", "leaf"],
+  christmas: ["tree", "hat"],
+  newyear: ["firework", "firework"],
+  easter: ["bunny", "egg"],
+  july: ["flag", "firework"],
+  gold: ["gold", "gold"],
+  sapphire: ["sapphire", "sapphire"],
+  cosmic: ["star", "planet"],
+};
+let accentTheme = "";
+function renderThemeAccents(theme) {
+  if (theme === accentTheme) return;
+  accentTheme = theme;
+  const layer = document.getElementById("themeAccents");
+  if (!layer) return;
+  layer.innerHTML = (THEME_ACCENTS[theme] || [])
+    .map(
+      (name, i) =>
+        `<span class="theme-accent accent-${i}">${SEASONAL_ART[name]}</span>`,
+    )
+    .join("");
+}
