@@ -1,8 +1,120 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AJR TCG Control Board</title><link rel="stylesheet" href="css/control.css?v=1"></head><body><header><div><strong>AJR TCG BREAKS</strong><div class="build-label">TCG Build 01 • isolated from Sports V23</div></div><span id="connection">Connecting…</span></header><div class="preview-links"><a href="index.html?v=1" target="_blank">Preview full overlay</a><a href="rip.html?v=1" target="_blank">Preview rip overlay</a></div>
-<section><h2>TCG Theme</h2><nav id="themeTabs"><button data-theme="electric">Electric TCG</button><button data-theme="cosmic">Cosmic TCG</button><button data-theme="elemental">Elemental TCG</button></nav><p class="hint">Theme changes apply to both Full and Ripping overlays.</p></section>
-<section><h2>Board</h2><nav id="tabs"><button data-board="type">Board 5 — Pokémon Type</button><button data-board="chaser">Board 6 — Pokémon Chaser</button></nav><p class="hint">Click a spot to claim it. ★ highlights a chase.</p><div id="types"></div><div id="chasers"></div><button class="danger" id="reset">Reset current board</button></section>
-<section><h2>$1 Random Spin In</h2><div class="timer-dock-preview" id="timerDockPreview" data-color="black"><strong id="timerDockValue">03:00</strong><small id="timerDockStatus">Hidden • Ready</small></div><div class="timer-time-fields"><div><label for="timerMinutes">Minutes</label><input id="timerMinutes" type="number" min="0" max="999" value="3"></div><div><label for="timerSeconds">Seconds</label><input id="timerSeconds" type="number" min="0" max="59" value="0"></div></div><div class="actions"><button id="timerSet">Set time</button><button id="timerStart">Start</button><button id="timerPause">Pause</button><button id="timerReset">Reset</button><button id="timerShow">Show timer</button><button id="timerClear">Clear timer</button></div><label for="timerColor">Timer panel color</label><select id="timerColor"><option value="red">Red</option><option value="white">White</option><option value="black" selected>Black</option></select></section>
-<section><h2>Current Givvy</h2><input id="givvyInput" maxlength="100" placeholder="e.g. Booster pack"><div class="actions"><button id="givvyUpdate">Update</button><button id="givvyShow">Hide givvy line</button><button id="givvyClear">Clear</button></div></section>
-<section><h2>Rolling ticker</h2><textarea id="message" rows="3"></textarea><div class="actions"><button id="update">Update ticker</button><button id="save">Save preset</button><button id="pause">Pause</button></div><label for="speed">Scroll speed</label><select id="speed"><option value="36">Slow</option><option value="24">Normal</option><option value="16">Fast</option></select><div id="presets"></div></section>
-<section><h2>Show animations</h2><label for="cueView">Display animation on</label><select id="cueView"><option value="full">Full Type/Chaser board</option><option value="rip">Ripping view</option></select><div class="actions"><button data-cue="stashpass">Stash or Pass</button><button data-cue="pyt">PYT</button><button data-cue="see2">See 2 Pick 1</button><button data-cue="see3">See 3 Pick 2</button><button id="cuePause" disabled>Pause animation</button><button id="cueClear">Clear animation</button></div></section>
-<footer id="notice">TCG control panel only — Sports V23 is not connected to this server.</footer><script src="js/state.js?v=1"></script><script src="js/timer-control.js?v=1"></script><script src="js/show-control.js?v=1"></script><script src="js/control.js?v=1"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AJR TCG Control Board</title>
+    <link rel="stylesheet" href="css/control.css?v=1" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <strong>AJR TCG BREAKS</strong>
+        <div class="build-label">TCG Build 01 • isolated from Sports V23</div>
+      </div>
+      <span id="connection">Connecting…</span>
+    </header>
+    <div class="preview-links">
+      <a href="index.html?v=1" target="_blank">Preview full overlay</a
+      ><a href="rip.html?v=1" target="_blank">Preview rip overlay</a>
+    </div>
+    <section>
+      <h2>TCG Theme</h2>
+      <nav id="themeTabs">
+        <button data-theme="electric">Electric TCG</button
+        ><button data-theme="cosmic">Cosmic TCG</button
+        ><button data-theme="elemental">Elemental TCG</button>
+      </nav>
+      <p class="hint">Theme changes apply to both Full and Ripping overlays.</p>
+    </section>
+    <section>
+      <h2>Board</h2>
+      <nav id="tabs">
+        <button data-board="type">Board 5 — Pokémon Type</button
+        ><button data-board="chaser">Board 6 — Pokémon Chaser</button>
+      </nav>
+      <p class="hint">Click a spot to claim it. ★ highlights a chase.</p>
+      <div id="types"></div>
+      <div id="chasers"></div>
+      <button class="danger" id="reset">Reset current board</button>
+    </section>
+    <section>
+      <h2>$1 Random Spin In</h2>
+      <div class="timer-dock-preview" id="timerDockPreview" data-color="black">
+        <strong id="timerDockValue">03:00</strong
+        ><small id="timerDockStatus">Hidden • Ready</small>
+      </div>
+      <div class="timer-time-fields">
+        <div>
+          <label for="timerMinutes">Minutes</label
+          ><input id="timerMinutes" type="number" min="0" max="999" value="3" />
+        </div>
+        <div>
+          <label for="timerSeconds">Seconds</label
+          ><input id="timerSeconds" type="number" min="0" max="59" value="0" />
+        </div>
+      </div>
+      <div class="actions">
+        <button id="timerSet">Set time</button
+        ><button id="timerStart">Start</button
+        ><button id="timerPause">Pause</button
+        ><button id="timerReset">Reset</button
+        ><button id="timerShow">Show timer</button
+        ><button id="timerClear">Clear timer</button>
+      </div>
+      <label for="timerColor">Timer panel color</label
+      ><select id="timerColor">
+        <option value="red">Red</option>
+        <option value="white">White</option>
+        <option value="black" selected>Black</option>
+      </select>
+    </section>
+    <section>
+      <h2>Current Givvy</h2>
+      <input id="givvyInput" maxlength="100" placeholder="e.g. Booster pack" />
+      <div class="actions">
+        <button id="givvyUpdate">Update</button
+        ><button id="givvyShow">Hide givvy line</button
+        ><button id="givvyClear">Clear</button>
+      </div>
+    </section>
+    <section>
+      <h2>Rolling ticker</h2>
+      <textarea id="message" rows="3"></textarea>
+      <div class="actions">
+        <button id="update">Update ticker</button
+        ><button id="save">Save preset</button><button id="pause">Pause</button>
+      </div>
+      <label for="speed">Scroll speed</label
+      ><select id="speed">
+        <option value="36">Slow</option>
+        <option value="24">Normal</option>
+        <option value="16">Fast</option>
+      </select>
+      <div id="presets"></div>
+    </section>
+    <section>
+      <h2>Show animations</h2>
+      <label for="cueView">Display animation on</label
+      ><select id="cueView">
+        <option value="full">Full Type/Chaser board</option>
+        <option value="rip">Ripping view</option>
+      </select>
+      <div class="actions">
+        <button data-cue="stashpass">Stash or Pass</button
+        ><button data-cue="pyt">PYT</button
+        ><button data-cue="see2">See 2 Pick 1</button
+        ><button data-cue="see3">See 3 Pick 2</button
+        ><button id="cuePause" disabled>Pause animation</button
+        ><button id="cueClear">Clear animation</button>
+      </div>
+    </section>
+    <footer id="notice">
+      TCG control panel only — Sports V23 is not connected to this server.
+    </footer>
+    <script src="js/state.js?v=1"></script>
+    <script src="js/timer-control.js?v=1"></script>
+    <script src="js/show-control.js?v=1"></script>
+    <script src="js/control.js?v=1"></script>
+  </body>
+</html>
