@@ -1,1 +1,121 @@
-*{box-sizing:border-box}html,body{width:1080px;height:1920px;margin:0;overflow:hidden;background:transparent;font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif}#overlay{position:relative;width:1080px;height:1920px;--a:#20a8ff;--b:#c32cff;--c:#45e7ff}html[data-theme="cosmic"] #overlay{--a:#7d55ff;--b:#f03be8;--c:#33cfff}html[data-theme="elemental"] #overlay{--a:#18bfff;--b:#ffb62e;--c:#9d4dff}.rip-shell{position:absolute;inset:8px;border:8px solid #c5cfda;border-radius:28px;box-shadow:0 0 18px var(--a),inset 0 0 22px var(--b);background:linear-gradient(90deg,rgba(7,14,30,.9),transparent 4% 96%,rgba(7,14,30,.9));pointer-events:none}.rip-shell:before{content:"";position:absolute;left:18px;right:18px;top:150px;bottom:18px;border:4px solid #c4ced8;border-radius:20px;box-shadow:0 0 14px var(--a),inset 0 0 0 2px #15283d}.top-logo{position:absolute;top:4px;left:50%;width:230px;transform:translateX(-50%);z-index:35;filter:drop-shadow(0 0 10px var(--a)) drop-shadow(0 0 14px var(--b))}.ticker-wrap{position:absolute;top:118px;left:132px;width:816px;height:34px;z-index:30;overflow:hidden;display:flex;align-items:center}.ticker-track{display:inline-flex;white-space:nowrap;min-width:max-content;color:white;font-size:20px;letter-spacing:1.2px;text-transform:uppercase;text-shadow:0 0 7px var(--a),2px 2px 0 #000;animation:tickerScroll 22s linear infinite}.ticker-track span{padding-right:55px}@keyframes tickerScroll{to{transform:translateX(-50%)}}.givvy-bar{position:absolute;top:155px;left:270px;width:540px;height:42px;z-index:40;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(2,6,15,.9);border:2px solid #c4ced8;border-radius:0 0 14px 14px;box-shadow:0 0 12px var(--a);color:#fff;font:700 19px Arial}.givvy-bar strong{color:var(--c)}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 1080px;
+  height: 1920px;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+#overlay {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  --a: #20a8ff;
+  --b: #c32cff;
+  --c: #45e7ff;
+}
+html[data-theme="cosmic"] #overlay {
+  --a: #7d55ff;
+  --b: #f03be8;
+  --c: #33cfff;
+}
+html[data-theme="elemental"] #overlay {
+  --a: #18bfff;
+  --b: #ffb62e;
+  --c: #9d4dff;
+}
+.rip-shell {
+  position: absolute;
+  inset: 8px;
+  border: 8px solid #c5cfda;
+  border-radius: 28px;
+  box-shadow:
+    0 0 18px var(--a),
+    inset 0 0 22px var(--b);
+  background: linear-gradient(
+    90deg,
+    rgba(7, 14, 30, 0.9),
+    transparent 4% 96%,
+    rgba(7, 14, 30, 0.9)
+  );
+  pointer-events: none;
+}
+.rip-shell:before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 150px;
+  bottom: 18px;
+  border: 4px solid #c4ced8;
+  border-radius: 20px;
+  box-shadow:
+    0 0 14px var(--a),
+    inset 0 0 0 2px #15283d;
+}
+.top-logo {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 230px;
+  transform: translateX(-50%);
+  z-index: 35;
+  filter: drop-shadow(0 0 10px var(--a)) drop-shadow(0 0 14px var(--b));
+}
+.ticker-wrap {
+  position: absolute;
+  top: 118px;
+  left: 132px;
+  width: 816px;
+  height: 34px;
+  z-index: 30;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  min-width: max-content;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 7px var(--a),
+    2px 2px 0 #000;
+  animation: tickerScroll 22s linear infinite;
+}
+.ticker-track span {
+  padding-right: 55px;
+}
+@keyframes tickerScroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.givvy-bar {
+  position: absolute;
+  top: 155px;
+  left: 270px;
+  width: 540px;
+  height: 42px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(2, 6, 15, 0.9);
+  border: 2px solid #c4ced8;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 0 12px var(--a);
+  color: #fff;
+  font: 700 19px Arial;
+}
+.givvy-bar strong {
+  color: var(--c);
+}

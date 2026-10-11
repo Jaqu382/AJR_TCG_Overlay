@@ -1,14 +1,65 @@
+.countdown-timer {
+  position: absolute;
+  left: 345px;
+  top: 756px;
+  width: 390px;
+  height: 152px;
+  z-index: 110;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 23px;
+  border: 2px solid #9ca8b9;
+  background: rgba(9, 14, 23, 0.96);
+  color: #fff;
+  box-shadow: 0 3px 12px #0008;
+  font-family: Arial, sans-serif;
+}
+.countdown-timer[hidden] {
+  display: none;
+}
+.countdown-label {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+.countdown-value {
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 59px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-timer[data-color="red"] {
+  background: rgba(155, 29, 40, 0.97);
+  border-color: #ff9ca3;
+  color: #fff;
+}
+.countdown-timer[data-color="white"] {
+  background: rgba(249, 250, 252, 0.97);
+  border-color: #c6ced9;
+  color: #111827;
+}
+.countdown-timer[data-color="black"] {
+  background: rgba(9, 14, 23, 0.97);
+  border-color: #9ca8b9;
+  color: #fff;
+}
+.rip-view .countdown-timer {
+  top: 240px;
+}
 
-.countdown-timer { position:absolute;left:345px;top:756px;width:390px;height:152px;z-index:110;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border-radius:23px;border:2px solid #9ca8b9;background:rgba(9,14,23,.96);color:#fff;box-shadow:0 3px 12px #0008;font-family:Arial,sans-serif; }
-.countdown-timer[hidden] { display:none; }
-.countdown-label { font-size:23px;font-weight:700;line-height:1;white-space:nowrap; }
-.countdown-value { font-family:'Consolas','Courier New',monospace;font-size:59px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums; }
-.countdown-timer[data-color="red"] { background:rgba(155,29,40,.97);border-color:#ff9ca3;color:#fff; }
-.countdown-timer[data-color="white"] { background:rgba(249,250,252,.97);border-color:#c6ced9;color:#111827; }
-.countdown-timer[data-color="black"] { background:rgba(9,14,23,.97);border-color:#9ca8b9;color:#fff; }
-.rip-view .countdown-timer { top:240px; }
+.countdown-timer {
+  top: 720px;
+}
+.rip-view .countdown-timer {
+  top: 240px;
+}
 
-.countdown-timer {top:720px;}
-.rip-view .countdown-timer {top:240px;}
-
-body:not(.rip-view) .countdown-timer {top:710px;}
+body:not(.rip-view) .countdown-timer {
+  top: 710px;
+}
