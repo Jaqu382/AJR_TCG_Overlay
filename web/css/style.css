@@ -6,3 +6,16 @@
 .ajr-logo{position:absolute;z-index:80;left:50%;top:485px;width:245px;height:auto;transform:translateX(-50%);filter:drop-shadow(0 0 12px var(--a)) drop-shadow(0 0 18px var(--b));pointer-events:none}.givvy-bar{position:absolute;left:270px;top:650px;width:540px;height:45px;z-index:70;display:flex;align-items:center;justify-content:center;gap:9px;background:rgba(2,6,15,.88);border:2px solid #bfc9d5;border-radius:0 0 16px 16px;box-shadow:0 0 12px var(--a);font:700 20px Arial;letter-spacing:.6px}.givvy-bar strong{color:var(--c)}
 /* Camera opening: same placement/size as Sports V23; nothing is drawn inside it. */
 #overlay:after{content:"";position:absolute;left:22px;right:22px;top:705px;bottom:22px;z-index:12;border:6px solid #c4ced8;border-radius:22px;box-shadow:0 0 14px var(--a),inset 0 0 0 2px #15283d,inset 0 0 16px var(--b);pointer-events:none}
+
+/* BUILD 02: TCG-only restrained Championship treatment.
+   Ticker, logo, givvy, camera opening and all behavior remain unchanged. */
+.tcg-shell:before{border:7px solid #aab7c9;box-shadow:inset 0 0 0 3px #17283b,0 0 6px rgba(48,130,207,.35),inset 0 0 9px rgba(62,96,151,.22);background:linear-gradient(90deg,rgba(12,24,39,.68),transparent 4% 96%,rgba(12,24,39,.68))}
+.tcg-shell:after{border:4px solid #a9b8ca;box-shadow:0 0 5px rgba(40,122,211,.36),inset 0 0 7px rgba(38,91,166,.22);background:linear-gradient(160deg,#07101e,#090d19 56%,#06101c)}
+.cosmic-art{opacity:.16;filter:none}
+.type-grid,.chaser-grid{top:141px;height:358px}
+.type-grid{gap:10px}
+.type-card{border-radius:9px;border:2px solid rgba(167,188,211,.65);background:linear-gradient(180deg,rgba(18,31,49,.98),rgba(5,11,23,.99));box-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 0 9px rgba(48,102,166,.13),0 0 3px rgba(49,114,187,.28)}
+.energy-symbol{width:90px;height:90px;font-size:58px;border-width:4px;filter:drop-shadow(0 0 3px currentColor)}
+.type-name{margin-top:10px;font-size:27px;letter-spacing:.6px}
+.type-items .type-name,.type-trainers .type-name{font-size:32px}
+/* Keep original ticker, logo, givvy and camera CSS unmodified. */

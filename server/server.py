@@ -3,7 +3,8 @@ from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
 from pathlib import Path
 import json,threading,webbrowser,os,argparse
 from urllib.parse import urlsplit,unquote
-ROOT=Path(__file__).resolve().parent;STATE_FILE=ROOT/'ajr-tcg-state.json';LOCK=threading.Lock()
+PROJECT_ROOT=Path(__file__).resolve().parent.parent
+ROOT=PROJECT_ROOT/'web';STATE_FILE=PROJECT_ROOT/'data'/'ajr-tcg-state.json';LOCK=threading.Lock()
 def spot():return {'sold':False,'highlight':False}
 def chaser():return {'name':'','sold':False,'highlight':False}
 def defaults():
@@ -38,6 +39,7 @@ class Handler(BaseHTTPRequestHandler):
    if candidate.get('board') not in ('type','chaser') or candidate.get('theme') not in ('electric','cosmic','elemental') or len(candidate.get('chasers',[]))!=30 or candidate.get('duration') not in (16,24,36):return self.reply(400)
    encoded=json.dumps(candidate,ensure_ascii=False).encode()
    with LOCK:
+    STATE_FILE.parent.mkdir(parents=True,exist_ok=True)
     tmp=STATE_FILE.with_suffix('.tmp');tmp.write_bytes(encoded);os.replace(tmp,STATE_FILE);STATE=candidate
    self.reply(200,encoded)
   except Exception:return self.reply(400)

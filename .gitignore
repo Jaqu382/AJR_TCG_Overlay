@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+# Local overlay state (created automatically by the server)
+/data/
+
 __pycache__/
 *.py[codz]
 *$py.class
